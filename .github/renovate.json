@@ -12,5 +12,17 @@
         "#\\srenovate:\\sdatasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( extractVersion=(?<extractVersion>.*?))?\\s(ENV|ARG) .*?_VERSION(\\s+|=)(?<currentValue>.*)\\s"
       ]
     }
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["java-jdk"],
+      "matchPaths": ["/17/Dockerfile"],
+      "allowedVersions": "<18"
+    },
+    {
+      "matchPackageNames": ["java-jdk"],
+      "matchPaths": ["/19/Dockerfile"],
+      "allowedVersions": "<20"
+    }
   ]
 }
