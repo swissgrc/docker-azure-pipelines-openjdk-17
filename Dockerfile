@@ -1,4 +1,4 @@
-FROM debian:11.3-slim
+FROM debian:11.5-slim
 
 LABEL org.opencontainers.image.vendor="Swiss GRC AG"
 LABEL org.opencontainers.image.authors="Swiss GRC AG <opensource@swissgrc.com>"
@@ -11,14 +11,14 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Install Docker CLI
 
 # renovate: datasource=github-tags depName=docker/cli extractVersion=^v(?<version>.*)$
-ENV DOCKERCLI_VERSION=20.10.17
-# renovate: datasource=repology depName=debian_11/curl versioning=loose
-ENV CURL_VERSION=7.74.0-1.3+deb11u2
-# renovate: datasource=repology depName=debian_11/ca-certificates versioning=loose
+ENV DOCKERCLI_VERSION=20.10.21
+#Disabled renovate: datasource=repology depName=debian_11/curl versioning=loose
+ENV CURL_VERSION=7.74.0-1.3+deb11u3
+#Disabled renovate: datasource=repology depName=debian_11/ca-certificates versioning=loose
 ENV CACERTIFICATES_VERSION=20210119
-# renovate: datasource=repology depName=debian_11/lsb-release versioning=loose
+#Disabled renovate: datasource=repology depName=debian_11/lsb-release versioning=loose
 ENV LSBRELEASE_VERSION=11.1.0
-# renovate: datasource=repology depName=debian_11/gnupg2 versioning=loose
+#Disabled renovate: datasource=repology depName=debian_11/gnupg2 versioning=loose
 ENV GNUPG_VERSION=2.2.27-2+deb11u2
 
 RUN apt-get update -y && \
@@ -41,8 +41,8 @@ RUN apt-get update -y && \
 
 # Install OpenJDK
 
-# renovate: datasource=adoptium depName=java-jdk versioning=loose
-ENV OPENJDK_VERSION=17.0.4.0.0+8
+# renovate: datasource=adoptium-java depName=java-jdk versioning=loose
+ENV OPENJDK_VERSION=17.0.4.1.0+1
 
 RUN apt-get update -y && \
   # Add Eclipse Adoptium public key
