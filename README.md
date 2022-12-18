@@ -1,7 +1,7 @@
 # Docker image for running Java applications in an Azure Pipelines container job
 
 <!-- markdownlint-disable MD013 -->
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/swissgrc/docker-azure-pipelines-openjdk/blob/main/LICENSE) [![Build](https://img.shields.io/github/workflow/status/swissgrc/docker-azure-pipelines-openjdk/Build/develop?style=flat-square)](https://github.com/swissgrc/docker-azure-pipelines-openjdk/actions/workflows/publish.yml) [![Pulls](https://img.shields.io/docker/pulls/swissgrc/azure-pipelines-openjdk.svg?style=flat-square)](https://hub.docker.com/r/swissgrc/azure-pipelines-openjdk) [![Stars](https://img.shields.io/docker/stars/swissgrc/azure-pipelines-openjdk.svg?style=flat-square)](https://hub.docker.com/r/swissgrc/azure-pipelines-openjdk)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/swissgrc/docker-azure-pipelines-openjdk/blob/main/LICENSE) [![Build](https://img.shields.io/github/actions/workflow/status/swissgrc/docker-azure-pipelines-openjdk/publish.yml?branch=develop&style=flat-square)](https://github.com/swissgrc/docker-azure-pipelines-openjdk/actions/workflows/publish.yml) [![Pulls](https://img.shields.io/docker/pulls/swissgrc/azure-pipelines-openjdk.svg?style=flat-square)](https://hub.docker.com/r/swissgrc/azure-pipelines-openjdk) [![Stars](https://img.shields.io/docker/stars/swissgrc/azure-pipelines-openjdk.svg?style=flat-square)](https://hub.docker.com/r/swissgrc/azure-pipelines-openjdk)
 <!-- markdownlint-restore -->
 
 Docker image which provides [Eclipse Temurin OpenJDK] in an [Azure Pipelines container jobs].
