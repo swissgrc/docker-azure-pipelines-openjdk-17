@@ -14,12 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3.1.0
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
 
       # Extract metadata (tags, labels) for Docker
       - name: Extract Docker metadata
         id: meta
-        uses: docker/metadata-action@57396166ad8aefe6098280995947635806a0e6ea # tag=v4.1.1
+        uses: docker/metadata-action@507c2f2dc502c992ad446e3d7a5dfbe311567a96 # v4.3.0
         with:
           images: swissgrc/azure-pipelines-openjdk
           tags: |
@@ -30,7 +30,7 @@ jobs:
 
       # Build Docker image with Buildx
       - name: Build Docker image
-        uses: docker/build-push-action@c56af957549030174b10d6867f20e78cfd7debc5 # tag=v3.2.0
+        uses: docker/build-push-action@37abcedcc1da61a57767b7588cb9d03eb57e28b3 # v3.3.0
         with:
           context: .
           push: false
@@ -40,7 +40,7 @@ jobs:
       # Scan Docker image (not for release builds since we will have multiple tags)
       - name: Scan Docker image
         if: github.event_name != 'release'
-        uses: aquasecurity/trivy-action@d63413b0a4a4482237085319f7f4a1ce99a8f2ac # tag=0.7.1
+        uses: aquasecurity/trivy-action@9ab158e8597f3b310480b9a69402b419bc03dbd5 # tag=0.8.0
         with:
           image-ref: ${{ steps.meta.outputs.tags }}
           format: 'sarif'
@@ -49,7 +49,7 @@ jobs:
       # Publish scan report to GitHub
       - name: Publish scan report to GitHub
         if: ${{ github.event_name != 'release' && always() }}
-        uses: github/codeql-action/upload-sarif@ec3cf9c605b848da5f1e41e8452719eb1ccfb9a6 # tag=v2.1.29
+        uses: github/codeql-action/upload-sarif@a34ca99b4610d924e04c68db79e503e1f79f9f02 # v2.1.39
         with:
           sarif_file: trivy-results.sarif
 
@@ -63,7 +63,7 @@ jobs:
 
       # Publish Docker image for CI builds if not PR build
       - name: Push container image
-        uses: docker/build-push-action@c56af957549030174b10d6867f20e78cfd7debc5 # tag=v3.2.0
+        uses: docker/build-push-action@37abcedcc1da61a57767b7588cb9d03eb57e28b3 # v3.3.0
         if: github.event_name != 'pull_request'
         with:
           context: .
@@ -74,7 +74,7 @@ jobs:
       # Update Readme on Docker Hub
       - name: Publish README to Docker Hub
         if: github.event_name != 'pull_request'
-        uses: peter-evans/dockerhub-description@14881160433a81f9ebc838a253d4edd9e8fc35f1 # tag=v3.1.1
+        uses: peter-evans/dockerhub-description@93b93397c27ed52b4055b8c6b2f8d92456ab3c56 # tag=v3.1.2
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
