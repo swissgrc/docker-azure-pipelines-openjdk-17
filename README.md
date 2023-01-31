@@ -48,7 +48,7 @@ These environment variables are supported:
 | Environment variable   | Default value        | Description                                                      |
 |------------------------|----------------------|------------------------------------------------------------------|
 | DOCKERCLI_VERSION      | `20.10.23`           | Version of Docker CLI installed in the image.                    |
-| OPENJDK_VERSION        | `17.0.5.0.0+8`       | Version of Eclipse Temurin OpenJDK installed in the image.       |
+| OPENJDK_VERSION        | `17.0.6.0.0+10`      | Version of Eclipse Temurin OpenJDK installed in the image.       |
 | CACERTIFICATES_VERSION | `20210119`           | Version of `ca-certificates` package used to install components. |
 | CURL_VERSION           | `7.74.0-1.3+deb11u5` | Version of `curl` package used to install components.            |
 | LSBRELEASE_VERSION     | `11.1.0`             | Version of `lsb-release` package used to install components.     |
