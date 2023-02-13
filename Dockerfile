@@ -60,11 +60,11 @@ COPY --from=build /etc/apt/sources.list.d/ /etc/apt/sources.list.d
 # Install Docker CLI
 
 # renovate: datasource=github-tags depName=docker/cli extractVersion=^v(?<version>.*)$
-ENV DOCKERCLI_VERSION=20.10.23
+ENV DOCKERCLI_VERSION=23.0.1
 
 # Install Docker CLI
 RUN apt-get update -y && \
-  apt-get install -y --no-install-recommends docker-ce-cli=5:${DOCKERCLI_VERSION}~3-0~debian-bullseye && \
+  apt-get install -y --no-install-recommends docker-ce-cli=5:${DOCKERCLI_VERSION}-1~debian.11~bullseye && \
   # Clean up
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* && \
