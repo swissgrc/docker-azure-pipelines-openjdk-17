@@ -1,7 +1,7 @@
 # Docker image for running Java applications in an Azure Pipelines container job
 
 <!-- markdownlint-disable MD013 -->
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/swissgrc/docker-azure-pipelines-openjdk/blob/main/LICENSE) [![Build](https://img.shields.io/github/actions/workflow/status/swissgrc/docker-azure-pipelines-openjdk/publish.yml?branch=develop&style=flat-square)](https://github.com/swissgrc/docker-azure-pipelines-openjdk/actions/workflows/publish.yml) [![Pulls](https://img.shields.io/docker/pulls/swissgrc/azure-pipelines-openjdk.svg?style=flat-square)](https://hub.docker.com/r/swissgrc/azure-pipelines-openjdk) [![Stars](https://img.shields.io/docker/stars/swissgrc/azure-pipelines-openjdk.svg?style=flat-square)](https://hub.docker.com/r/swissgrc/azure-pipelines-openjdk)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/swissgrc/docker-azure-pipelines-openjdk/blob/main/LICENSE) [![Build](https://img.shields.io/github/actions/workflow/status/swissgrc/docker-azure-pipelines-openjdk/publish.yml?branch=develop&style=flat-square)](https://github.com/swissgrc/docker-azure-pipelines-openjdk/actions/workflows/publish.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=swissgrc_docker-azure-pipelines-openjdk&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=swissgrc_docker-azure-pipelines-openjdk) [![Pulls](https://img.shields.io/docker/pulls/swissgrc/azure-pipelines-openjdk.svg?style=flat-square)](https://hub.docker.com/r/swissgrc/azure-pipelines-openjdk) [![Stars](https://img.shields.io/docker/stars/swissgrc/azure-pipelines-openjdk.svg?style=flat-square)](https://hub.docker.com/r/swissgrc/azure-pipelines-openjdk)
 <!-- markdownlint-restore -->
 
 Docker image which provides [Eclipse Temurin OpenJDK] in an [Azure Pipelines container jobs].
@@ -35,12 +35,13 @@ The following example shows the container used for a deployment step which shows
 
 | Tag        | Description                                                                                   | Base Image       | Docker CLI | OpenJDK  | Size                                                                                                                             |
 |------------|-----------------------------------------------------------------------------------------------|------------------|------------|----------|----------------------------------------------------------------------------------------------------------------------------------|
-| latest     | Latest stable release (from `main` branch)                                                    | debian:11.6-slim | 20.10.23   | 17.0.6.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/latest?style=flat-square)   |
-| unstable   | Latest unstable release (from `develop` branch)                                               | debian:11.6-slim | 20.10.23   | 17.0.6.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/unstable?style=flat-square) |
+| latest     | Latest stable release (from `main` branch)                                                    | debian:11.6-slim | 23.0.5     | 17.0.7.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/latest?style=flat-square)   |
+| unstable   | Latest unstable release (from `develop` branch)                                               | debian:11.6-slim | 23.0.5     | 17.0.7.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/unstable?style=flat-square) |
 | 17.0.4.0   | [OpenJDK 17.0.4](https://foojay.io/java-17/?tab=component&version=17.0.4&quarter=072022)      | debian:11.3-slim | 20.10.17   | 17.0.4.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/17.0.4.0?style=flat-square) |
 | 17.0.4.1   | [OpenJDK 17.0.4](https://foojay.io/java-17/?tab=component&version=17.0.4&quarter=072022)      | debian:11.5-slim | 20.10.21   | 17.0.4.1 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/17.0.4.1?style=flat-square) |
 | 17.0.5.0   | [OpenJDK 17.0.5](https://foojay.io/java-17/?tab=component&version=17.0.5&quarter=102022)      | debian:11.6-slim | 20.10.23   | 17.0.5.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/17.0.5.0?style=flat-square) |
 | 17.0.6.0   | [OpenJDK 17.0.6](https://foojay.io/java-17/?tab=component&version=17.0.6&quarter=012023)      | debian:11.6-slim | 20.10.23   | 17.0.6.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/17.0.6.0?style=flat-square) |
+| 17.0.7.0   | [OpenJDK 17.0.7](https://foojay.io/java-17/?version=17.0.7&quarter=042023)                    | debian:11.6-slim | 23.0.5     | 17.0.7.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/17.0.7.0?style=flat-square) |
 
 ### Configuration
 
@@ -48,8 +49,8 @@ These environment variables are supported:
 
 | Environment variable   | Default value        | Description                                                      |
 |------------------------|----------------------|------------------------------------------------------------------|
-| DOCKERCLI_VERSION      | `20.10.23`           | Version of Docker CLI installed in the image.                    |
-| OPENJDK_VERSION        | `17.0.6.0.0+10`      | Version of Eclipse Temurin OpenJDK installed in the image.       |
+| DOCKERCLI_VERSION      | `23.0.5`             | Version of Docker CLI installed in the image.                    |
+| OPENJDK_VERSION        | `17.0.7.0.0+7`       | Version of Eclipse Temurin OpenJDK installed in the image.       |
 | CACERTIFICATES_VERSION | `20210119`           | Version of `ca-certificates` package used to install components. |
 
 [Eclipse Temurin OpenJDK]: https://adoptium.net/temurin/
