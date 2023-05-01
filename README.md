@@ -36,7 +36,7 @@ The following example shows the container used for a deployment step which shows
 | Tag        | Description                                                                                   | Base Image       | Docker CLI | OpenJDK  | Size                                                                                                                             |
 |------------|-----------------------------------------------------------------------------------------------|------------------|------------|----------|----------------------------------------------------------------------------------------------------------------------------------|
 | latest     | Latest stable release (from `main` branch)                                                    | debian:11.6-slim | 20.10.23   | 17.0.6.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/latest?style=flat-square)   |
-| unstable   | Latest unstable release (from `develop` branch)                                               | debian:11.6-slim | 23.0.4     | 17.0.7.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/unstable?style=flat-square) |
+| unstable   | Latest unstable release (from `develop` branch)                                               | debian:11.6-slim | 23.0.5     | 17.0.7.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/unstable?style=flat-square) |
 | 17.0.4.0   | [OpenJDK 17.0.4](https://foojay.io/java-17/?tab=component&version=17.0.4&quarter=072022)      | debian:11.3-slim | 20.10.17   | 17.0.4.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/17.0.4.0?style=flat-square) |
 | 17.0.4.1   | [OpenJDK 17.0.4](https://foojay.io/java-17/?tab=component&version=17.0.4&quarter=072022)      | debian:11.5-slim | 20.10.21   | 17.0.4.1 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/17.0.4.1?style=flat-square) |
 | 17.0.5.0   | [OpenJDK 17.0.5](https://foojay.io/java-17/?tab=component&version=17.0.5&quarter=102022)      | debian:11.6-slim | 20.10.23   | 17.0.5.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/17.0.5.0?style=flat-square) |
@@ -48,7 +48,7 @@ These environment variables are supported:
 
 | Environment variable   | Default value        | Description                                                      |
 |------------------------|----------------------|------------------------------------------------------------------|
-| DOCKERCLI_VERSION      | `23.0.4`             | Version of Docker CLI installed in the image.                    |
+| DOCKERCLI_VERSION      | `23.0.5`             | Version of Docker CLI installed in the image.                    |
 | OPENJDK_VERSION        | `17.0.7.0.0+7`       | Version of Eclipse Temurin OpenJDK installed in the image.       |
 | CACERTIFICATES_VERSION | `20210119`           | Version of `ca-certificates` package used to install components. |
 
