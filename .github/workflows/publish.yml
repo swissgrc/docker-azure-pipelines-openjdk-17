@@ -16,7 +16,8 @@ jobs:
       image-name: swissgrc/azure-pipelines-openjdk
       default-latest-tag: true
       additional-latest-tag-name: 17
-      unstable-tag-name: 17-unstable
+      default-unstable-tag: true
+      additional-unstable-tag-name: 17-unstable
     secrets:
       gh-token: ${{ secrets.GITHUB_TOKEN }}
       docker-username: ${{ secrets.DOCKER_USERNAME }}
