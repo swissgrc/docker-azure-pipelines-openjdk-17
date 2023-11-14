@@ -1,5 +1,5 @@
 # Base image containing dependencies used in builder and final image
-FROM ghcr.io/swissgrc/azure-pipelines-dockercli:24.0.5 AS base
+FROM ghcr.io/swissgrc/azure-pipelines-dockercli:24.0.7 AS base
 
 # Make sure to fail due to an error at any stage in shell pipes
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -11,7 +11,7 @@ FROM base AS build
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # renovate: datasource=repology depName=debian_12/curl versioning=loose
-ENV CURL_VERSION=7.88.1-10+deb12u1
+ENV CURL_VERSION=7.88.1-10+deb12u4
 # renovate: datasource=repology depName=debian_12/lsb-release versioning=loose
 ENV LSBRELEASE_VERSION=12.0-1
 # renovate: datasource=repology depName=debian_12/gnupg2 versioning=loose
@@ -44,7 +44,7 @@ COPY --from=build /etc/apt/sources.list.d/ /etc/apt/sources.list.d
 # Install OpenJDK
 
 # renovate: datasource=adoptium-java depName=java-jdk versioning=loose
-ENV OPENJDK_VERSION=17.0.8.1.0+1
+ENV OPENJDK_VERSION=17.0.9.0.0+9
 
 # Install OpenJDK
 RUN apt-get update -y && \
