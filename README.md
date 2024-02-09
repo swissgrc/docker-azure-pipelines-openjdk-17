@@ -46,6 +46,7 @@ The following example shows the container used for a deployment step which shows
 | 17.0.8.0    | [OpenJDK 17.0.8](https://foojay.io/java-17/?version=17.0.8&quarter=072023)                    | azure-pipelines-dockercli:24.0.5 | 17.0.8.0  | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/17.0.8.0?style=flat-square)    |
 | 17.0.8.1    | [OpenJDK 17.0.8](https://foojay.io/java-17/?version=17.0.8&quarter=072023)                    | azure-pipelines-dockercli:24.0.5 | 17.0.8.1  | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/17.0.8.1?style=flat-square)    |
 | 17.0.9.0    | [OpenJDK 17.0.9](https://adoptium.net/temurin/release-notes/?version=jdk-17.0.9+9)            | azure-pipelines-dockercli:24.0.7 | 17.0.9.0  | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/17.0.9.0?style=flat-square)    |
+| 17.0.10.0   | [OpenJDK 17.0.10](https://adoptium.net/temurin/release-notes/?version=jdk-17.0.10+7)          | azure-pipelines-dockercli:25.0.3 | 17.0.10.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-openjdk/17.0.10.0?style=flat-square)   |
 
 ### Configuration
 
