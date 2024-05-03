@@ -1,5 +1,5 @@
 # Base image containing dependencies used in builder and final image
-FROM ghcr.io/swissgrc/azure-pipelines-dockercli:25.0.3 AS base
+FROM ghcr.io/swissgrc/azure-pipelines-dockercli:26.1.1 AS base
 
 # Make sure to fail due to an error at any stage in shell pipes
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -44,7 +44,7 @@ COPY --from=build /etc/apt/sources.list.d/ /etc/apt/sources.list.d
 # Install OpenJDK
 
 # renovate: datasource=adoptium-java depName=java-jdk versioning=loose
-ENV OPENJDK_VERSION=17.0.10.0.0+7
+ENV OPENJDK_VERSION=17.0.11.0.0+9
 
 # Install OpenJDK
 RUN apt-get update -y && \
